@@ -1,0 +1,49 @@
+<%- include('header'); -%>
+
+
+<% record.forEach(function(rcd){ %>
+
+
+    <div class="container">
+        <h1>Edit Record</h1>
+    
+        <div class="col-6 col-offset-6">
+            <form action='/read/<%= rcd.id %>/update' method="POST">
+                <div class="form-group row">
+                    <label class="col-sm-3">
+                       First Name
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="firstN" placeholder="First Name" name="first_name"  value=<%= rcd.first_name %>>
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label class="col-sm-3">
+                       Last Name
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="lastN" placeholder="Last Name" name="last_name" value=<%= rcd.last_name %>>
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label class="col-sm-3">
+                       Email
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="emaiL" placeholder="Email" name="email" value=<%= rcd.email %>>
+                    </div>
+                </div>
+                <button type="sumbit" class="btn btn-primary">Done</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+<% }) %>
+
+<%- include('footer'); -%>

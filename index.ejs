@@ -1,0 +1,32 @@
+<%- include('header'); -%>
+
+    <h1>All Students</h1>
+
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+
+        <% students.forEach(function(std){ %>
+
+            <tr>
+                <td> <%= std.id %> </td>
+                <td> <%= std.first_name %> </td>
+                <td> <%= std.last_name %> </td>
+                <td> <%= std.email %> </td>
+                <td>
+                    <a class="btn btn-info" href="/read/<%= std.id %>/update">Edit</a>
+                    <a class="btn btn-danger" href="/students/<%=std.id%>/delete">Delete</a>
+                </td>
+
+            </tr>
+
+            <% }) %>
+    </table>
+    
+<%- include('footer'); -%>
+
